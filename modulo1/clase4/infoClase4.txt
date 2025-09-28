@@ -1,0 +1,292 @@
+# #***********************************************WHILE**************************************
+# Para repetir un bloque de código mientras una condición se cumpla (es verdadera).  
+# El código dentro del bucle se ejecuta repetidamente hasta que la condición se vuelve falsa.
+
+#* SINTAXIS
+# inicialización de la variable de control ⚠️
+# ⭐while condición:
+#     # Bloque de código a ejecutar mientras la condición sea True
+#     # Actualización de la variable de control ⚠️🚩
+
+# *⁉️Cómo funciona
+# Se evalúa la condición.
+# Si la condición es verdadera (True), se ejecuta el bloque de código.
+# Luego se vuelve a evaluar la condición.
+# Cuando la condición es falsa (False), se sale del bucle y se continúa con el resto del programa.
+************************************************Codigo explicacion....******************************************
+
+
+# *⭐Uso típico del while
+# Cuando no sabemos de antemano cuántas veces se repetirá el ciclo.
+# Cuando la repetición depende de una condición dinámica cambiante, o del usuario.
+# En combinación con break para salir anticipadamente.
+************************************************Codigo explicacion....******************************************
+
+
+
+#*⛹🏽‍♂️⛹🏽‍♀️💡EJERCICIO #1: Genere y muestre la tabla de multiplicar de un número específico.💡⛹🏽‍♂️⛹🏽‍♀️
+# El programa debe pedirle al usuario que ingrese un número entero y luego,
+# utilizando un bucle, debe imprimir la tabla de multiplicar de ese número del 1 al 10.
+************************************************Codigo Solucion....******************************************
+
+
+
+
+
+
+# #***********************************************DICT**************************************
+# *TDD dict
+# Se crea con llaves {}. 
+# Colección de datos que almacena información en pares de clave:valor. 
+
+# Con Asignación puedes crear un nuevo par (c:v) 
+# o actualiza, utilizando la clave (como indice) para acceder al valor. 
+# Con la asignacion, Si la clave ya existe haces actualizacion, sino creacion del elemento.
+
+# Cada elemento es un par (c:v), y deben estar separados por “,”
+# ? ⁉️QUE TDD PUEDEN SER CLAVE Y VALUE?
+
+
+# clave: debe ser TDD inmutable (como un str, int, o tuple).
+# valor: puede ser de cualquier TDD.
+#***CREACION****
+#***ACCESO A VALUES****
+************************************************Codigo explicacion....******************************************
+
+#*METODOS
+# Tamaño: con len(dict), retorna el número de elementos.
+# Mutabilidad: Son mutables, puedes agregar, eliminar y modificar elementos. Las claves son irrepetibles.
+#Actualizar o crear depende de si la clave YA existe.
+
+# Acceder al Valor: 
+    # dict[clave]: Lanza error si la clave no existe
+    # valor = mi_diccionario.get(clave): Retorna None o un valor por defecto si la clave no existe.
+
+# Eliminar un Elemento:
+    # dict.pop(clave): Elimina el elemento y retorna el valor
+    # dict.popitem(): Elimina el ultimo elemento.
+    # del dict[clave] Elimina el elemento sin retornar nada.
+
+# Vaciar Diccionario: Elimina todos los elementos.
+    # dict.clear()
+
+# Verificar Clave: Comprueba si una clave existe. Retorna bool.
+    # clave in dict
+************************************************Codigo explicacion....******************************************
+
+
+
+#*RECORRERLOS O ITERRALOS
+# Ordenados: mantienen el orden de inserción de los elementos.
+# for clave in dict -> defalult, itera sobre las claves
+# dict.values() -> itera sobre los valores
+# dict.items() -> itera sobre los pares clave-valores al mismo tiempo
+************************************************Codigo explicacion....******************************************
+
+
+#TODO: ⛹🏽‍♂️⛹🏽‍♀️💡EJERCICIO # 2: CREA UN DICT CON 5 ELEMENTOS, LAS CLAVES SERAN {1,2,3,4,5} Y LOS VALORES SERAN EL CUADRADO DE LAS CLAVES
+# CREA EL DICT VACIO, LUEGO MEDIANTE UN FOR ITERA UN RANGE(1,6) PARA CREAR LOS PARES (c:v)
+************************************************Codigo Solucion....******************************************
+#....
+#📖👀⁉️ A diferencia de las listas, a un dict vacío sí puedes asignar directamente valores usando una clave nueva, 
+# incluso si el dict está inicialmente vacío.
+lista_vacia = []
+#lista_vacia[0] = 'hola'  #! Esto produce IndexError: list assignment index out of range
+
+# Esto ocurre porque la lista inicialmente no tiene elementos y no se puede asignar directamente a un índice inexistente.
+# Para agregar elementos a una lista vacía debes usar métodos como:
+# append() para añadir al final
+
+
+
+
+#TODO: ⛹🏽‍♂️⛹🏽‍♀️💡EJERCICIO #3 : mapeando un dict para encontra TDD num y aplicar descuento.💡⛹🏽‍♂️⛹🏽‍♀️
+persona_ejercicio = {
+    'nombre': 'Ana',
+    'femenina': True,
+    102: 100,
+    'hobbies': ['leer', 'viajar', 'codear'],
+    'contacto': {
+        'email': 'ana@ejemplo.com',
+        'telefono': '555-1234'
+    },
+    ('latitud', 'longitud'): [40.7128, -74.006],
+    (1, 2, 3): [10, 20, 30]
+}
+# Instrucciones:
+# Recorre el diccionario dict _ejercicio con un ciclo for.
+# Para cada elemento, verifica si el valor asociado es un número (ya sea entero o decimal).
+# Usa la función: isinstance(valor, (int, float)) para hacer esta comprobación.
+# ⭐isinstance(valor, (int, float)) -> verifica si valor es un de tipo int o float. Retorna bool.
+# Si el valor es numérico, calcula y aplica un descuento del 20% a ese valor.
+# Por cada valor numérico modificado, imprime un mensaje en el siguiente formato:
+# La clave es "clave", se le aplica un descuento del 20% a su valor original VALOR_ORIGINAL,
+# resultando en VALOR_CON_DESCUENTO.
+************************************************Codigo Solucion....******************************************
+
+
+#*COPIAR UN DICT
+#  ? Copia Superficial: .copy() || dict()
+# Crea un nuevo dict, pero si el original contiene objetos mutables
+# (list o dict), ambos diccionarios apuntarán a los mismos objetos. 
+# Cualquier cambio en esos objetos anidados afectará a ambas copias.
+# Uso: Si solo contiene TDD inmutables (str, int, tuple).
+
+# ?Copia Profunda: import copy; copy.deepcopy()
+# Crea un diccionario totalmente independiente, replicando todos los objetos anidados. 
+# Uso: El contiene objetos mutables anidados que necesitas que sean independientes de la copia original.
+edily = {
+    'genero':'F',
+    "edad":30,                                                    # ✅TDD valor es int: INmutable, los cambios NO afectan al otro
+    ("materias", 'calificaciones'): [['math', 'bio'], [20, 19]],  # ⚠️TDD valor es List: Mutable, los cambios SI afectan al otro
+    "telefonos":{                                                 # ⚠️TDD valor es dict: Mutable, los cambios SI afectan al otro
+        "casa":42499,
+        "ofi":42400,
+    }
+}
+************************************************Codigo explicacion....******************************************
+
+#*⛹🏽‍♂️⛹🏽‍♀️💡EJERCICIO #4: Manupulacion de copia profunda de dict💡⛹🏽‍♂️⛹🏽‍♀️
+# Crea una copia profunda del diccionario producto (usando copy.deepcopy).
+# 1. En la copia:
+# 2. Agrega el elemento 'moneda' con el valor ('$', '€'), imprimelo.
+# 3. Agrega el elemento 'precio_moneda' ( tipo string ), que resultará de concatenar el primer elemento de la clave moneda ('$') al valor de 'precio', imprimelo.
+
+# 4. Si el valor del "peso" (que está dentro de la clave ("dimensiones", "peso")) es menor o igual a "1.5kg" 
+# (extraer la parte numerica de ese str y remplaza 'el texto 'kg' por '', y conviertelo a float),
+# aplica un 20% de descuento sobre el "precio" (modifica el valor del precio).
+
+# 5. Extrae solo los valores numéricos de las "dimensiones" y guárdalos en una list (identifica el separador y str.split('separador')-> list).
+# tendras que limpiar el ultimo elemento con str.replace('cm', ''), luego conviertelos a float.
+
+# 6. Finalmente, imprime en consola el mensaje:
+# print(f'Escríbele a "{nombre_proveedor}" al correo "{email_proveedor}" para pedir descuento del producto "{nombre_producto}".')
+
+print('=='*30, 'EJERCICIO #4', '=='*30)
+import copy
+producto = {
+    "nombre": "Laptop XYZ",
+    "precio": 1200.50,
+    "en_stock": True,
+    101: "Electrónica",
+    "características": ["16GB RAM", "512GB SSD", "Intel i7"],
+    "proveedor": {
+        "nombre": "Proveedor ABC",
+        "contacto": "contacto@abc.com"
+    },
+    ("dimensiones", "peso"): ["30cm x 20cm x 2cm", "1.5kg"],
+    (2023, 9, 15): "Fecha de lanzamiento"
+}
+************************************************Codigo Solucion....******************************************
+
+
+
+# *******************************************************set
+# colección no ordenada de elementos únicos, irrepetibles y mutables. 
+# Puedes agregar o quitar elementos después de crear el set.
+# *Características:
+#No hay duplicados.
+#Desordenados, NO puedes accederlos por índice.
+# Solo pueden contener elementos inmutables (por ejemplo, números, strings, tuplas).
+# Usados para para eliminar duplicados y realizar operaciones de conjuntos matemáticos (unión, intersección, diferencia).
+# Creacion con llaves {}:
+************************************************Codigo explicacion....******************************************
+
+
+
+
+
+
+
+
+
+
+
+# ********************************************Unpacking de TDD Iterables
+# 1. Para asignación simultanea y rápida de los elementos de un iterable (lista, tupla, str, etc.) a variables individuales.
+# 2. Para crear combinación de colecciones o cambiar el TDD de la secuencia.
+# 3. ⏰Para pasar argumentos dinámicos a funciones de forma clara y concisa.
+
+
+# *1. Asignación simultánea de elementos de ITERABLES a variables individuales
+# Ejemplo 1: Unpacking con list, lo mismo con str, set, dict (pero en diccionarios solo las llaves)
+************************************************Codigo explicacion....******************************************
+
+
+
+
+ACA QUEDAMOS!!!!!!!!!!!!
+# *⚠️💡👀 Cuando haces unpacking en variables, debes:
+#  Tener tantas variables como elementos tenga el iterable en ese momento, o lanzará ValueError.
+# O usa el operador * para capturar varios elementos o el resto.
+
+# Ejemplo 3: Unpacking con operador *
+************************************************Codigo explicacion....**************************
+
+# *2. Combinación de colecciones o cambiar el TDD de la secuencia.
+************************************************Codigo explicacion....*************************
+
+
+#  ******************************FUNCIONES CON def ******************************************
+# Bloque de código de sentencias que realiza una tarea específica en el programa, 
+# siendo reusable. Usamos funciones para modular y evitar la repetición. 
+# La keyword "def" es usada para definir una función.
+# 
+# ⭐Argumentos: datos que pueda necesitar una función para realizar su tarea, y
+# serán pasados dentro de sus parentesis de ejecucion, separados por ","
+# pasa tantos, como parámetros se haya declarado en su definición, 
+# a menos que sean variables globales.  
+# 
+# ⭐La función podría o no retornar un valor o resultado, con la instrucción return.
+# return termina una función y opcionalmente devuelve un valor.
+
+# *SINTAXIS:
+#  def nombre_funcion(parámetros_opcionales):
+#     # Bloque de código indentado que define lo que hace la función
+#     instrucciones
+#     return valor_retorno_opcional
+# Ejemplos:
+# ************************************************Codigo explicacion....*********************
+
+
+#  ******************************ÁMBITO DE VARIABLES GLOBALES EN FUNCIONES**************************
+# ⭐Por default, en ámbito local, solo podemos leer una variables globales, 
+# ❌NO modificarla.
+# Dentro de un ámbito local (función), puedes modificar una variable global, 
+# usar la keyword global antes de intentar modificarla. Como 1era declaracion en la func
+# ⚠️Cuidado, la modificación afectara el valor de la variable, local y globalmente.
+# Esto NO es una buena practica⚠️
+
+# 📖💡⭐La imposibilidad de modificar variables globales en ámbitos de d funciones, 
+# NO ocurre en los bucles, porque estos NO crea un nuevo ámbito. 
+# Estárias trabajando directamente en el ámbito global donde la variable fue definida
+# ************************************************Codigo explicacion....***************************
+
+
+#*ARGUMENTOS POSICIONALES Y POR PALABRA CLAVE EN FUNCIONES
+# Cuando ""llamas""" a una función, puedes pasar los """argumentos""" de dos maneras:
+
+# *1️⃣Argumentos posicionales: Se pasan en el mismo orden en que los PARÁMETRO están definidos.
+# *2️⃣Argumentos por palabra clave: Puedes especificar los argumentos usando los nombres de los PARÁMETRO, 
+# te permite cambiar el orden.
+# *3️⃣Valores por defecto: Puedes asignar un valor por defecto a un PARÁMETRO al definir la función. 
+# Esto hace que ese parámetro sea opcional. Si el usuario no lo proporciona, se usará el valor por defecto. 
+# ⚠️❌Los parámetros con valores por defecto siempre deben ir después de los parámetros sin valores por defecto, 
+# de lo contrario generaras un Error ❌
+# ************************************************Codigo explicacion....********************************
+#*⛹🏽‍♂️⛹🏽‍♀️⛹🏽‍♂️⛹🏽‍♀️💡EJERCICIO #1:Funciones
+# Crear un programa que verifique si una persona es mayor de edad. 
+# Para ello, debes crear una función que reciba 
+# la edad como parámetro y devuelva True si la persona 
+# es mayor de edad o False si no lo es.
+
+#*⛹🏽‍♂️⛹🏽‍♀️⛹🏽‍♂️⛹🏽‍♀️💡EJERCICIO #2:Funciones
+Crea una función que calcule el precio final de un producto después de aplicar un descuento. 
+La función debe recibir de usuario con input(), el precio original, el porcentaje de descuento, 
+y si aplica el descuento (si/no), y devolver el precio final, lo que dependerá de si aplica o no 
+el descuento.
+
+aplica_descuento(p, t, aplica):
+    if aplica == 'si'
+        result = p - (( p * t ) % 100 )
+aplica_descuento(100, 20, 'no'):
